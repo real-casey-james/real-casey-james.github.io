@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+}
+
+#welcome-section {
+    height: 100vh;
+    background-color: hotPink;
+    text-align: center;
+  }
+  
+  #welcome-section h1 {
+    font-size: 8vw;
+    padding-top: 40vh;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+  }
+  
+  #welcome-section p {
+    font-family: "Montserrat", sans-serif;
+    font-style: italic;
+    font-size: 3vw;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: mediumVioletRed;
+    height: 9vh;
+    line-height: 9vh;
+    text-align: right;
+  }
+  
+  nav a {
+    margin-right: 40px;
+    color: pink;
+    text-decoration: none;
+    font-size: 2vw;
+    padding: 100px 0;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  nav a:hover {
+    color: coral;
+  }
+  
+  #blog {
+    padding: 3vh;
+    background-color: tomato;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  #blog h1 {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    font-size: 4vw;
+  }
+  #projects {
+    padding: 3vh;
+    background-color: lightSkyBlue;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  #projects h1 {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    font-size: 4vw;
+  }
+  
+  #contact {
+    font-size: 40px;
+    background-color: mediumSeaGreen;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    padding: 3vh;
+  }
+  
+  #contact h1 {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    font-size: 4vw;
+  }
+  #contact p {
+    font-style: italic;
+  }
+  
+  #contact img {
+    height: 100px;
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    nav a {
+      font-size: 20px;
+    }
+    #welcome-section h1 {
+        font-size: 50px;
+    }
+    #blog h1 {
+      font-size: 50px;
+    }
+    #projects h1 {
+        font-size: 50px;
+    }
+    #contact h1 {
+        font-size: 50px;
+    }
+    #blog h3 {
+      font-size: 30px;
+    }
+    #projects h3 {
+        font-size: 30px;
+    }
+    #contact h3 {
+        font-size: 30px;
+    }
+    #contact p {
+      font-size: 30px;
+    }
+    #blog p {
+        font-size: 15px;
+      }
+  }
+  
+  .flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .flex-container > div {
+    padding: 20px;
+    background-color: cornflowerBlue;
+    margin: 20px;
+  }
+  
+  h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5vw;
+    margin: 0.4vw;
+  }
+  
+  #logo-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  #logo-container a {
+    padding: 10px;
+    margin-bottom: 40px;
+    width: 20vh;
+  }
+  
+  #projects a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  #projects a:hover {
+    color: lightSkyBlue;
+  }
+  
+  a.anchor {
+    display: block;
+    position: relative;
+    top: -9vh;
+    visibility: hidden;
+}
+
+.blog-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .blog-container > div {
+    padding: 20px;
+    background-color: lightsalmon;
+    margin: 20px;
+  }
+
+  #blog a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  #blog a:hover {
+    color: tomato;
+  }
+
+  #blog p {
+      font-weight: lighter;
+  }
+
+  .description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1vw;
+    text-align: left;
+    width: 350px;
+  }
+
+  .date {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-size: .8vw;
+    text-align: right;
+  }
