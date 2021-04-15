@@ -12,7 +12,6 @@ style{
     text-align: left;
     font-family: monospace;
     color: #fc7307;
-    z-index: 2;
     pointer-events: auto;
   }
 
@@ -22,14 +21,6 @@ style{
     text-align: center;
 }
 
-#fixed,
-#absolute {
-    z-index: 1;
-}
-
-#moveit {
-    margin-right: 250px;
-}
 
 #navbar {
     height: 100%;
@@ -132,6 +123,27 @@ ul {
     margin-left: 20px;
 }
 
+
+#bonus-content {
+    opacity: 0.4;
+    position: sticky;
+    margin-top: 300px;
+    width: 200px;
+    font-size: 10px;
+    border: 1px solid #fc7307;
+}
+
+#bonus-content-surprise {
+    z-index: 4;
+    position: fixed;
+    top: 0px;
+    left: 0vw;
+    bottom: 0px;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
 @media only screen and (max-width: 800px) {
     main {
     margin-left: 0;
@@ -148,14 +160,49 @@ ul {
     }
 }
 
-@media only screen and (max-width: 600px) {
-        #topbar a {
-        padding-right: 5px;
-        font-size: 12px;
+@media (max-width: 600px) {
+    #topbar {
+        height: 6vh;
+        line-height: 6vh;
+    }    
+    #topbar a {
+        padding-right: 0px;
+        font-size: 16px;
         }
         h1 {
             font-size: 20px;
+            padding-top: 0;
+            top: 1.5vh;
+        }
+        h2 {
+            top: 6vh;
+            padding-bottom: .4vh;
+        
+        }
+        h3 {
+            font-size: 17px;
+        }
+        p,
+        ul {
+            font-size: 16px
+        }
+        main {
+            margin-top: 6vh;
         }
     }
 
+#table {
+    border: 1px solid #fc7307;
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
 
+#before {
+    border: 1px dashed #fc7307;
+    height: 108px;
+    width: 233px;
+    position: relative;
+    bottom: 110px;
+    left: 0px;
+}

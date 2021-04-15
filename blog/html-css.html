@@ -62,82 +62,78 @@ Footer
     <h2>Relative Positioning</h2>
 
     <h3>What is it?</h3>
-    <p>CSS elements with relative positioning are positioned relative to where they would normally be placed, ie 'relative to itself'. Other content will not be adjusted to fit into any gap left by the element moving. 
+    <p>Offset an element from its current position in the document.
+    <p>Elements are positioned relative to where they would normally be placed in the flow of the document, ie 'relative to itself'. 
 
     <h3>What's it good for?</h3>
     <ul><li>Offsetting elements
     <li>Getting elements to line up</ul>
 
-    <h3>How can I use it?</h3>
+    <h3>How do I use it?</h3>
     <ul><li><code>position: relative;</code> sets the element to have a relative position
-    <li><code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code> properties are used to set the elements position, relative to where they would normally be placed</ul>
-
-    <p>If you set the element to a relative position, and don't set any other position attributes (<code>top</code>, <code>right</code>, <code>bottom</code> or <code>left</code>), nothing will happen - the element will stay in its 'normal' position.
+    <li><code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code> properties are used to set the elements position, relative to where they would normally be placed.</ul>
 
     <h3>Example</h3>
-    <p>Here's the CSS for simple relative positioning. A container with an <code>id</code> of <code>relative</code> has a <code>position</code> of <code>relative</code>, and is positioned <code>left</code> by <code>100px</code>.</p>
+    <p>Here's the CSS for simple relative positioning. A container with an <code>id</code> of <code>relative</code> has a <code>position</code> of <code>relative</code>, and is positioned <code>top</code> by <code>46px</code> and <code>left</code> by <code>50px</code>. The dashed border is the original position of the container.</p>
     <p>The code below is <code>editable</code> - change some of the properties and values and see what happens!
-
 
         <div class="container" id="relative">
         <style spellcheck="false" contenteditable="true">
     #relative {
         position: relative;
-        left: 100px;
+        top: 46px;
+        left: 50px;
     }
                 </style>
 
-    </div>
+    </div><div id="before"></div>
     
-
-
 </section>
-
 
 <section id="abs">
     <h2>Absolute Positioning</h2>
 
     <h3>What is it?</h3>
-    <p>CSS elements with absolute positioning are positioned relative to the nearest relatively (or absolutely) positioned parent. If it has no positioned parents, then it uses the document body. 
+    <p>Position an element relative to the nearest (nested) parent. <p>If it has no positioned parents, then it uses the document body. 
 
     <h3>What's it good for?</h3>
-    <p>This powerful type of positioning allows you to place your element precisely where you want it.
-    <p>The trade off it the element is removed from the flow of elements on the page. An element with an absolute position is not affected by other elements, and doesn't affect other elements. The element will overlap other elements unless you take action to avoid it. 
-    
-    <p>Overuse can limit the flexibility of your site.
 
-    <p>It can be used for popup info boxes, control menus, rollover panels etc.
+    <ul><li>popup info boxes <li>control menus <li>rollover panels etc.</ul>
 
-    <h3>How can I use it?</h3>
+    <h3>How do I use it?</h3>
     <ul><li><code>position: absolute;</code> sets the element to have absolute positioning
     <li><code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code> properties are used to set the elements position, relative to its parent.</ul>
-
         
-        <div class="container" id="absolute">
-            <style spellcheck="false" contenteditable="true">
+        <h3>Example</h3>
+        <p>Below is the CSS for simple absolute positioning. A container with an <code>id</code> of <code>absolute</code> has a <code>position</code> of <code>absolute</code>, and is positioned <code>top</code> by <code>10px</code> and <code>right</code> by <code>10px</code>. This means it is 10 pixels away from the top-right corner of its parent - which is the thin bordered box below.</p>
+        <p>The code below is <code>editable</code> - change some of the properties and values and see what happens!
+
+            <div id="table">
+                <div class="container" id="absolute">
+                    <style spellcheck="false" contenteditable="true">
     #absolute {
         position: absolute;
+        top: 10px;
         right: 10px;
     }
-                    </style>
-    
+                            </style> 
+            </div>
         </div>
-        <h3>Example</h3>
-        <p id="moveit">On the right is the CSS for simple absolute positioning. A container with an <code>id</code> of <code>absolute</code> has a <code>position</code> of <code>absolute</code>, and is positioned <code>right</code> by <code>10px</code>. This means it is 10 pixels away from the right side of its parent - which is this page as a whole.</p>
-        <p>The code to the right is <code>editable</code> - change some of the properties and values and see what happens!
 </section>
 
 <section id="fix">
     <h2>Fixed Positioning</h2>
         
     <h3>What is it?</h3>
-    <p>CSS elements with fixed positioning are similar to absolute positioning - instead of being relative to their parent, they are fixed relative to the users viewport, or screen. This means that the element stays in the same position on the users screen, even when scrolling. It doesn't leave a gap in the page where it would have been located. 
+    <p>Position an element relative to the users viewport, or screen. 
+        
+    <p>The element stays in the same position on the users screen, even when scrolling. It doesn't leave a gap in the page where it would have been located. 
 
     <h3>What's it good for?</h3>
     <ul><li>A navbar you want to always remain at the top of the page, even when scrolling
-    <li>A footer that is always visible, and might have copyright info, contact links, social media links etc</ul>
+    <li>A footer that is always visible, and might have copyright info, contact links, social media links etc.</ul>
 
-    <h3>How can I use it?</h3>
+    <h3>How do I use it?</h3>
     <ul><li><code>position: fixed;</code> sets the element to have a fixed position
     <li><code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code> properties are used to set the elements position, relative to the users viewport/screen.</ul>
         
@@ -156,6 +152,22 @@ Footer
                     </style>
     
         </div>
+
+
+
+        <div class="container" id="bonus-content">
+            <style spellcheck="false" contenteditable="true">
+    
+    #bonus-content-surprise {
+        display: none;
+    }
+    
+                    </style>
+    
+        </div>
+
+<img src="https://i.ibb.co/0cfg1Cp/0-CF06410-7-E17-45-F6-947-B-DABF5-B496-EA1-1-105-c.jpg" id="bonus-content-surprise">
+
 
 
 </section>
