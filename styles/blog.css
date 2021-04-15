@@ -205,4 +205,5 @@ ul {
     position: relative;
     bottom: 110px;
     left: 0px;
+    pointer-events: none;
 }
