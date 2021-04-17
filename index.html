@@ -20,50 +20,44 @@
   
   <body>
     
-    <nav id="navbar">
+    <nav>
       <a href="#ablog">Blog</a>
       <a href="#aprojects">Projects</a>
-      <a href="#acontact">Contact</a> 
     </nav>
     
-    <section id="welcome-section">
-      <h1>Hi I'm Casey</h1>
-      <p>Trying to be a web developer</p>
-    </section>
+    <div id="stickybox"></div>
+    <h1 id="hi">Hi I'm Casey</h1>
+    <section id="welcome-section"></section>
     
     <section id="blog">
       <a class="anchor" id="ablog"></a>
-      <h1>Blog</h1>
-      <div class="blog-container">
-        <div class="blog-tile"><a href="blog/identity-values.html"><h3>Identity & Values</h3><img height="200" src="https://www.theroadtrip.co.nz/wp-content/uploads/2019/08/hiking-roys-peak.jpg"></a><p class="description">What impact has identity amd values had on me?</p><p class="date">Friday 16 April 2021</p></div>
-        <div class="blog-tile"><a href="blog/learning-plan.html"><h3>Learning Plan</h3><img height="200" src="https://bilingua.io/wp-content/uploads/2017/04/language-learning-plan.jpg"></a><p class="description">What is my learning plan for the next few weeks?</p><p class="date">Friday 16 April 2021</p></div>
-        <div class="blog-tile"><a href="blog/html-css.html"><h3>Positioning in CSS</h3><img height="200" src="https://www.cleonix.com/blog/wp-content/uploads/2019/03/blog-15-03-1.png"></a><p class="description">What are the differences between relative, absolute, and fixed positioning?</p><p class="date">Thursday 15 April 2021</p></div>
+      <h2>Blog</h2>
+      <div class="flex-container">
+        <div><a href="blog/identity-values.html"><h3>Identity & Values</h3><img height="200" src="https://www.theroadtrip.co.nz/wp-content/uploads/2019/08/hiking-roys-peak.jpg"></a><p class="description">What impact has identity and values had on me?</p><p class="date">Friday 16 April 2021</p></div>
+        <div><a href="blog/learning-plan.html"><h3>Learning Plan</h3><img height="200" src="https://bilingua.io/wp-content/uploads/2017/04/language-learning-plan.jpg"></a><p class="description">What is my learning plan for the next few weeks?</p><p class="date">Friday 16 April 2021</p></div>
+        <div><a href="blog/html-css.html"><h3>Positioning in CSS</h3><img height="200" src="https://www.cleonix.com/blog/wp-content/uploads/2019/03/blog-15-03-1.png"></a><p class="description">What are the differences between relative, absolute, and fixed positioning?</p><p class="date">Thursday 15 April 2021</p></div>
       </div>
     </section>
 
     <section id="projects">
       <a class="anchor" id="aprojects"></a>
-      <h1>Projects</h1>
+      <h2>Projects</h2>
       <div class="flex-container">
-        <div class="project-tile"><a href="https://codepen.io/caseysj/pen/QWdmEWe"><h3>Spoon Sales Site</h3><img height="200" src="https://assets.codepen.io/5825103/internal/screenshots/pens/QWdmEWe.default.png?fit=cover&format=auto&ha=false&height=540&quality=75&v=2&version=1618279956&width=960"></a></div>
-        <div class="project-tile"><a href="https://codepen.io/caseysj/pen/GRrxjYN"><h3>Bread User Manual</h3><img height="200" src="https://assets.codepen.io/5825103/internal/screenshots/pens/GRrxjYN.default.png?fit=cover&format=auto&ha=false&height=540&quality=75&v=2&version=1618279900&width=960"></a></div>
-        <div class="project-tile"><a href="https://codepen.io/caseysj/pen/gOLegVj"><h3>Tribute Page</h3><img height="200" src="https://assets.codepen.io/5825103/internal/screenshots/pens/gOLegVj.default.png?fit=cover&format=auto&ha=false&height=540&quality=75&v=2&version=1618279940&width=960"></a></div>
-        <div class="project-tile"><a href="https://codepen.io/caseysj/pen/eYBQKzX"><h3>Survey Page</h3><img height="200" src="https://assets.codepen.io/5825103/internal/screenshots/pens/eYBQKzX.default.png?fit=cover&format=auto&ha=false&height=540&quality=75&v=2&version=1618279978&width=960"></a></div>  
+        <div><a href="https://codepen.io/caseysj/pen/QWdmEWe"><h3>Spoon Sales Site</h3><img height="200" src="https://assets.codepen.io/5825103/internal/screenshots/pens/QWdmEWe.default.png?fit=cover&format=auto&ha=false&height=540&quality=75&v=2&version=1618279956&width=960"></a></div>
+        <div><a href="https://codepen.io/caseysj/pen/GRrxjYN"><h3>Bread User Manual</h3><img height="200" src="https://assets.codepen.io/5825103/internal/screenshots/pens/GRrxjYN.default.png?fit=cover&format=auto&ha=false&height=540&quality=75&v=2&version=1618279900&width=960"></a></div>
+        <div><a href="https://codepen.io/caseysj/pen/gOLegVj"><h3>Tribute Page</h3><img height="200" src="https://assets.codepen.io/5825103/internal/screenshots/pens/gOLegVj.default.png?fit=cover&format=auto&ha=false&height=540&quality=75&v=2&version=1618279940&width=960"></a></div>
+        <div><a href="https://codepen.io/caseysj/pen/eYBQKzX"><h3>Survey Page</h3><img height="200" src="https://assets.codepen.io/5825103/internal/screenshots/pens/eYBQKzX.default.png?fit=cover&format=auto&ha=false&height=540&quality=75&v=2&version=1618279978&width=960"></a></div>  
       </div>
     </section>
     
-    <section id="contact">
-      <a class="anchor" id="acontact"></a>
-      <h1>Let's do this</h1>
-      <p>Pick your pipe</p>
-      <div id="logo-container">
-        <a href="https://codepen.io/caseysj" target="_blank" id="profile-link"><img src="https://blog.codepen.io/wp-content/uploads/2012/06/Button-Fill-Black-Large.png"></a>
-        <a href="https://github.com/real-casey-james" target="_blank" id="profile-link"><img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png"></a>
-        <a href="mailto:caseysjames@gmail.com"><img  src="https://www.pinclipart.com/picdir/big/123-1236933_tree-house-clipart.png"></a>
-        <a href="tel:021922739"><img src="https://www.pngfind.com/pngs/b/328-3288904_tel-png.png"></a>
+    <footer>
+      <div class="flex-container">
+        <a href="https://codepen.io/caseysj" target="_blank"><img src="https://blog.codepen.io/wp-content/uploads/2012/06/Button-Fill-Black-Large.png"></a>
+        <a href="https://github.com/real-casey-james" target="_blank"><img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png"></a>
+        <a href="mailto:caseysjames@gmail.com"><img src="https://www.pinclipart.com/picdir/big/123-1236933_tree-house-clipart.png"></a>
       </div>
        
-    </section>
+    </footer>
     
   </body>
 </html>

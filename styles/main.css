@@ -1,212 +1,163 @@
 body {
     margin: 0;
+    background-color: #fdc168;
+    font-family: "Montserrat", sans-serif;
 }
 
 #welcome-section {
-    height: 100vh;
-    background-color: hotPink;
-    text-align: center;
-  }
+    height: 47vh;
+}
   
-  #welcome-section h1 {
-    font-size: 8vw;
+#hi {
+    font-size: 6vh;
+    padding-left: 7vw;
+    position: sticky;
+    top: 0px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#stickybox {
     padding-top: 40vh;
-    font-family: "Montserrat", sans-serif;
-    margin: 0;
-  }
+}
   
-  #welcome-section p {
-    font-family: "Montserrat", sans-serif;
-    font-style: italic;
-    font-size: 3vw;
-  }
-  
-  nav {
+nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: mediumVioletRed;
-    height: 9vh;
-    line-height: 9vh;
-    text-align: right;
-  }
+    background-color: #fb9902;
+    height: 8vh;
+    line-height: 8vh;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+}
   
-  nav a {
-    margin-right: 40px;
-    color: pink;
-    text-decoration: none;
-    font-size: 2vw;
-    padding: 100px 0;
-    font-family: "Montserrat", sans-serif;
-  }
-  
-  nav a:hover {
-    color: coral;
-  }
-  
-  #blog {
-    padding: 3vh;
-    background-color: tomato;
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-  }
+nav a {
+    font-size: 20pt;
+    font-weight: bold;
+    margin: 0 40px 0 0;
+}
 
-  #blog h1 {
-    font-family: "Montserrat", sans-serif;
+h2 {
     margin: 0;
-    font-size: 4vw;
-  }
-  #projects {
-    padding: 3vh;
-    background-color: lightSkyBlue;
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-  }
-  
-  #projects h1 {
-    font-family: "Montserrat", sans-serif;
-    margin: 0;
-    font-size: 4vw;
-  }
-  
-  #contact {
     font-size: 40px;
-    background-color: mediumSeaGreen;
+    position: sticky;
+    top: 8vh;
+    background-color: #fdc168;
+    padding: 1vh;
     text-align: center;
-    font-family: "Montserrat", sans-serif;
-    padding: 3vh;
-  }
+}
   
-  #contact h1 {
-    font-family: "Montserrat", sans-serif;
-    margin: 0;
-    font-size: 4vw;
-  }
-  #contact p {
-    font-style: italic;
-  }
+footer {
+    background-color: #fb9902;
+    position: sticky;
+    bottom: 0;
+}
   
-  #contact img {
-    height: 100px;
-  }
-  
-  @media only screen and (max-width: 1000px) {
-    nav a {
-      font-size: 20px;
-    }
-    #welcome-section h1 {
-        font-size: 50px;
-    }
-    #blog h1 {
-      font-size: 50px;
-    }
-    #projects h1 {
-        font-size: 50px;
-    }
-    #contact h1 {
-        font-size: 50px;
-    }
-    #blog h3 {
-      font-size: 30px;
-    }
-    #projects h3 {
-        font-size: 30px;
-    }
-    #contact h3 {
-        font-size: 30px;
-    }
-    #contact p {
-      font-size: 30px;
-    }
-    #blog p {
-        font-size: 15px;
-      }
-  }
-  
-  .flex-container {
+.flex-container {
     display: flex;
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
   }
   
-  .flex-container > div {
+.flex-container div {
     padding: 20px;
-    background-color: cornflowerBlue;
+    background-color: #fdb768;
     margin: 20px;
+    position: relative;
   }
   
-  h3 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5vw;
-    margin: 0.4vw;
+h3 {
+    font-size: 30px;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+#blog {
+  margin-bottom: 40px;
+}
+
+section img {
+  margin: auto;
+  display: block;
+}
+  
+footer img {
+    padding: 20px;
+    height: 50px;
+}
+
+footer img:hover {
+    filter: invert(1);
   }
   
-  #logo-container {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  #logo-container a {
-    padding: 10px;
-    margin-bottom: 40px;
-    width: 20vh;
-  }
-  
-  #projects a {
+a {
     text-decoration: none;
     color: black;
   }
   
-  #projects a:hover {
-    color: lightSkyBlue;
+a:hover {
+    color: #fff1dc;
   }
   
-  a.anchor {
+a.anchor {
     display: block;
     position: relative;
     top: -9vh;
     visibility: hidden;
 }
 
-.blog-container {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .blog-container > div {
-    padding: 20px;
-    background-color: lightsalmon;
-    margin: 20px;
-  }
-
-  #blog a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  #blog a:hover {
-    color: tomato;
-  }
-
-  #blog p {
+#blog p {
       font-weight: lighter;
   }
 
-  .description {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1vw;
-    text-align: left;
+.description {
+    font-size: 15pt;
+    text-align: center;
     width: 350px;
   }
 
-  .date {
-    font-family: 'Montserrat', sans-serif;
+.date {
     font-style: italic;
-    font-size: .8vw;
+    font-size: 12pt;
     text-align: right;
+    position: absolute;
+    right: 15px;
+    bottom: 0px;
+  }
+
+  @media only screen and (max-device-width: 500px) {
+    nav a {
+      font-size: 40px;
+      height: 65px;
+    }
+    #hi {
+        font-size: 4.5em;
+        top: 40px;
+    }
+    h2 {
+      font-size: 5em;
+    }
+    .flex-container div {
+        width: 80vw;
+    }
+    .description {
+      font-family: 'Montserrat', sans-serif;
+      width: auto;
+    }
+  
+    .date {
+      font-size: 13px;
+    }
+
+    footer img {
+      height: 100px;
+    }
+
+    section img {
+      width: 90%;
+      height: auto;
+    }
   }
