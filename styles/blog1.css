@@ -1,0 +1,162 @@
+html {
+    background-color: #fdc168;
+}
+
+body {
+    margin: 0;
+    background-color: #fdc168;
+    font-family: "Montserrat", sans-serif;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fb9902;
+    height: 100px;
+    line-height: 100px;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+}
+  
+nav a {
+    font-size: 20pt;
+    font-weight: bold;
+    margin: 0 40px 0 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+  }
+  
+a:hover {
+    color: #fff1dc;
+  }
+
+#container {
+    border: 3px solid #fc7307;
+    pointer-events: none;
+    width: auto;
+    text-align: center;
+}
+
+style {
+    white-space:pre-wrap; 
+    display:block;
+    outline:none;
+    text-align: left;
+    font-family: monospace;
+    color: #fc7307;
+    pointer-events: auto;
+  }
+
+.container {
+    border: 3px solid #fc7307;
+    width: 230px;
+    text-align: center;
+}
+
+footer {
+    background-color: #fb9902;
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+}
+
+footer img {
+    padding: 1vh;
+    height: 5vh;
+    min-height: 50px;
+    margin: auto;
+    margin-bottom: 25px;
+    margin: auto;
+}
+
+footer img:hover {
+    filter: invert(1);
+  }
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+main {
+    padding: 100px 10px;
+  }
+
+section {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 90vh;
+}
+
+h1 {
+    padding-top: 20px;
+    position: sticky;
+    top: 15px;
+    padding-bottom: 20px;
+    z-index: 2;
+}
+
+h2 {
+    position: sticky;
+    top: 100px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #fdc168;
+}
+
+p,
+ul {
+    font-family: "Montserrat", sans-serif;
+    margin-left: 20px;
+}
+
+@media only screen and (max-device-width: 500px) {
+ 
+    nav a {
+      font-size: 30pt;
+    }
+
+    h1 {
+        font-size: 40pt;
+    }
+
+    h2 {
+      font-size: 30pt;
+      top: 99px;
+      margin-bottom: 50px;
+    }
+
+    h3 {
+      font-size: 28pt;
+    }
+    .flex-container div {
+        width: 80vw;
+        margin: 60px 0;
+    }
+    
+    p, 
+    ul {
+        font-size: 26pt;
+    }
+
+    footer {
+      height: 200px;
+    }
+
+    footer img {
+      height: 100px;
+    }
+
+    section img {
+      width: 90%;
+      height: auto;
+    }
+  }
