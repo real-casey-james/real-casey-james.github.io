@@ -21,8 +21,8 @@ nav {
 }
   
 nav a {
-    font-size: 20pt;
-    font-weight: bold;
+    font-size: 18pt;
+    font-weight: light;
     margin: 0 40px 0 0;
 }
 
@@ -116,6 +116,10 @@ p,
 ul {
     font-family: "Montserrat", sans-serif;
     margin-left: 20px;
+}
+
+code {
+  color: black;
 }
 
 @media only screen and (max-device-width: 500px) {

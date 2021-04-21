@@ -13,7 +13,7 @@ body {
     min-height: 300px;
     padding-left: 7vw;
     position: sticky;
-    top: 1vh;
+    top: 3px;
     pointer-events: none;
     z-index: 3;
 }
@@ -27,17 +27,16 @@ nav {
     top: 0;
     width: 100%;
     background-color: #fb9902;
-    height: 8vh;
-    line-height: 8vh;
-    min-height: 50px;
+    height: 100px;
+    line-height: 100px;
     z-index: 2;
     display: flex;
     justify-content: flex-end;
 }
   
 nav a {
-    font-size: 20pt;
-    font-weight: bold;
+    font-size: 18pt;
+    font-weight: light;
     margin: 0 40px 0 0;
 }
 
@@ -45,7 +44,7 @@ h2 {
     margin: 0;
     font-size: 40px;
     position: sticky;
-    top: 7.9vh;
+    top: 99px;
     background-color: #fdc168;
     padding: 1vh;
     text-align: center;
