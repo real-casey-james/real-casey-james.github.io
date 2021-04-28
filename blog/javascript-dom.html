@@ -11,93 +11,100 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>JavaScript & the DOM</title>
     </head>
-    
     <body>
         <nav id="topbar">
             <a href="../index.html#ablog">Blog</a>
             <a href="../index.html#aprojects">Projects</a>
         </nav>
-
-      <main>
+        <main>
         <h1>JavaScript & the DOM</h1>
-        <section>
-            <h2>An analogy to describe the differences between HTML and CSS</h2>
-
-<p>If a website is a house...
-<ul>
-<li>HTML is the framework of your house - it sets the structure of your house - what rooms there are, what is in each of the rooms - the general layout of the place
-
-<li>CSS is the decorator of your house - decides the colours and sizes of elements, how much free space there is, the positioning of elements within the room
-</ul>
-<h2>Explain control flow and loops using an example process from everyday life</h2>
-
-<p>Control flow is the order in which pieces of code are executed
-
-<p>Loops allow us to execute a certain piece of code multiple times, based on conditions. We could execute the code a set number of times, or execute the code until a condition is met. We can also have several pieces of code in one loop - which piece of code gets executed depends on which conditions are met. 
-
-<p>We could think about control flow and loops in terms of making a coffee in the morning
-<ol><li>Go to kitchen
-    <li>Check jug status - is there enough water?
-    <li>If yes, turn on jug. If no, fill up jug with enough water, then turn on jug.
-    <li>Check plunger status - is it available? Is it clean?
-    <li>If not available, buy a new one. If not clean, clean it. 
-    <li>Then fill with appropriate amount of coffee.
-    <li>Check jug status - has it boiled?
-    <li>If no, wait until boiled. If yes, fill plunger with hot water.
-    <li>Wait 3 minutes.
-    <li>Push plunger down, pour coffee into mug.
-    <li>Insert coffee in mouth.
-</ol>
-<h2>Describe what the DOM is and an example of how you might interact with it</h2>
-
-<p>The Document Object Model treats an HTML file as a tree structure, where each element on the page is a node on the tree. The DOM has a hierarchy - has parents, children and ancestors. Eg the body of an HTML document has the HTML document as its parent, and elements like headings, paragraphs, images etc as its children. 
-
-<p>We could use HTML, the DOM and JavaScript to create a button (HTML), that when pressed changes all the paragraphs in the document (DOM) to hotPink (JavaScript)
-
-<h2>Explain the difference between accessing data from arrays and objects</h2>
-
-<p>Arrays and objects are both mutable - ie they can be changed easily - and can both be used to store a list of values. 
-
-<p>Objects are best used to represent a 'thing' - like a person, car, or other 'object' in the world. A 'thing'/object has a set of characteristics that are called properties - in the example of a person these could be their name, age, height, weight, eye colour, favourite Spice Girl etc
-eg <code><br>person = {<br>
-    name: 'Casey',<br>
-    lives: 'Wellington',<br>
-    spiceGirl: 'Sporty'<br>
-}</code>
-
-<p>Data in an object can be accessed by dot or bracket notation
-<p>eg <code>person.name</code> would return <code>'Casey'</code>
-<p><code>person[lives]</code> would return <code>'Wellington'</code>
-
-<p>Arrays are lists of multiple items in a single variable eg <code>newZealandCities = ['Auckland', 'Hamilton', 'Wellington', 'Christchurch', 'Dunedin', 'Gore']</code>
-
-<p>Data in arrays can be accessed by its index value in square brackets - remembering that computers start counting at 0 - so newZealandCities[2] would return 'Wellington'
-
-
-<h2>Explain what functions are and why they are useful</h2>
-
-<p>Functions are little programs within websites that do small tasks for us
-
-<p>They let us do cool things with websites - they add interactivity, because they can 'remember' things, and use the computers hardware to 'think', or process information. So instead of a webpage being 'static' with just HTML, or static but pretty with CSS (and slightly interactive), with functions in JavaScript we can create websites that have interactivity and can store and process information.
-
-<p>eg a supermarkets website:
-<ul><li>with just HTML we could view the products
-<li>with HTML and CSS we could view the products on a pretty and responsive site
-<li>with HTML, CSS and JavaScript we could add them to our shopping cart and give them shipping and payment details so they can deliver the products to our house.
-</ul>
-
-</section>
-
-</main>
-
-<footer>
-   <div class="flex-container">
-     <a href="https://codepen.io/caseysj" target="_blank"><img src="https://blog.codepen.io/wp-content/uploads/2012/06/Button-Fill-Black-Large.png"></a>
-     <a href="https://github.com/real-casey-james" target="_blank"><img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png"></a>
-     <a href="mailto:caseysjames@gmail.com"><img src="https://www.pinclipart.com/picdir/big/123-1236933_tree-house-clipart.png"></a>
-   </div>
- </footer>
-
-</body>
-
+            <section>
+                <h2>An analogy to describe the differences between HTML and CSS</h2>
+                <p>
+                    If a website is a house...
+                </p>
+                <ul>
+                    <li>HTML is the framework of your house - it sets the structure of your house - what rooms there are, what is in each of the rooms - the general layout of the place
+                    <li>CSS is the decorator of your house - decides the colours and sizes of elements, how much free space there is, the positioning of elements within the room
+                </ul>
+                <h2>Explain control flow and loops using an example process from everyday life</h2>
+                <p>
+                    Control flow is the order in which pieces of code are executed
+                </p>
+                <p>
+                    Loops allow us to execute a certain piece of code multiple times, based on conditions. We could execute the code a set number of times, or execute the code until a condition is met. We can also have several pieces of code in one loop - which piece of code gets executed depends on which conditions are met. 
+                </p>
+                <p>
+                    We could think about control flow and loops in terms of making a coffee in the morning
+                </p>
+                <ol><li>Go to kitchen
+                    <li>Check jug status - is there enough water?
+                    <li>If yes, turn on jug. If no, fill up jug with enough water, then turn on jug.
+                    <li>Check plunger status - is it available? Is it clean?
+                    <li>If not available, buy a new one. If not clean, clean it. 
+                    <li>Then fill with appropriate amount of coffee.
+                    <li>Check jug status - has it boiled?
+                    <li>If no, wait until boiled. If yes, fill plunger with hot water.
+                    <li>Wait 3 minutes.
+                    <li>Push plunger down, pour coffee into mug.
+                    <li>Insert coffee in mouth.
+                </ol>
+                <h2>Describe what the DOM is and an example of how you might interact with it</h2>
+                <p>
+                    The Document Object Model treats an HTML file as a tree structure, where each element on the page is a node on the tree. The DOM has a hierarchy - has parents, children and ancestors. Eg the body of an HTML document has the HTML document as its parent, and elements like headings, paragraphs, images etc as its children. 
+                </p>
+                <p>
+                    We could use HTML, the DOM and JavaScript to create a button (HTML), that when pressed changes all the paragraphs in the document (DOM) to hotPink (JavaScript)
+                </p>
+                <h2>Explain the difference between accessing data from arrays and objects</h2>
+                <p>
+                    Arrays and objects are both mutable - ie they can be changed easily - and can both be used to store a list of values. 
+                </p>
+                <p>
+                    Objects are best used to represent a 'thing' - like a person, car, or other 'object' in the world. A 'thing'/object has a set of characteristics that are called properties - in the example of a person these could be their name, age, height, weight, eye colour, favourite Spice Girl etc
+                    eg: <code><br>person = {<br>
+                    name: 'Casey',<br>
+                    lives: 'Wellington',<br>
+                    spiceGirl: 'Sporty'<br>
+                }</code>
+                </p>
+                <p>
+                    Data in an object can be accessed by dot or bracket notation
+                </p>
+                <p>
+                    eg <code>person.name</code> would return <code>'Casey'</code>
+                </p>
+                <p>
+                    <code>person[lives]</code> would return <code>'Wellington'</code>
+                </p>
+                <p>
+                    Arrays are lists of multiple items in a single variable eg <code>newZealandCities = ['Auckland', 'Hamilton', 'Wellington', 'Christchurch', 'Dunedin', 'Gore']</code>
+                </p>
+                <p>
+                    Data in arrays can be accessed by its index value in square brackets - remembering that computers start counting at 0 - so <code>newZealandCities[2]</code> would return <code>'Wellington'</code>
+                </p>
+                <h2>Explain what functions are and why they are useful</h2>
+                <p>
+                    Functions are little programs within websites that do small tasks for us
+                </p>
+                <p>
+                    They let us do cool things with websites - they add interactivity, because they can 'remember' things, and use the computers hardware to 'think', or process information. So instead of a webpage being 'static' with just HTML, or static but pretty with CSS (and slightly interactive), with functions in JavaScript we can create websites that have interactivity and can store and process information.
+                </p>
+                <p>
+                    eg a supermarkets website:
+                    <ul><li>with just HTML we could view the products
+                    <li>with HTML and CSS we could view the products on a pretty and responsive site
+                    <li>with HTML, CSS and JavaScript we could add them to our shopping cart and give them shipping and payment details so they can deliver the products to our house.
+                    </ul>
+                </p>
+            </section>
+        </main>
+        <footer>
+            <div class="flex-container">
+            <a href="https://codepen.io/caseysj" target="_blank"><img src="https://blog.codepen.io/wp-content/uploads/2012/06/Button-Fill-Black-Large.png"></a>
+            <a href="https://github.com/real-casey-james" target="_blank"><img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png"></a>
+            <a href="mailto:caseysjames@gmail.com"><img src="https://www.pinclipart.com/picdir/big/123-1236933_tree-house-clipart.png"></a>
+            </div>
+        </footer>
+    </body>
 </html>
