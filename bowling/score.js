@@ -6,7 +6,7 @@ console.log('working')
 
 function updateFrames (game) {
   //loop through each frame, get ball by id, update game array
-  for (var i = 1; i < game.length + 1; i+=2) {
+  for (var i = 1; i < 18; i+=2) {
     game[i][0] = document.getElementById("ball" + i).value
     game[i][1] = document.getElementById("ball" + i + 1).value
   }
