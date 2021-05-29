@@ -6,8 +6,8 @@ body {
 }
 
 button  {
-    height: 50px;
-    margin: 20px;
+    height: 45px;
+    margin: 20px 20px 0px 20px;
     min-width: 100px;
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
@@ -26,7 +26,6 @@ label {
     text-align: center;
     font-size: 13px;
     margin-left: 5px;
-    margin-bottom: 4px;
 }
 
 input {
@@ -41,10 +40,16 @@ input {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-end;
 }
 
-div {
+.flexItems {
     display: block;
     padding-left: 10px;
-    padding-right: 10px
+    padding-right: 10px;
+}
+
+#fontSize {
+    height: 38px;
+    text-align: center;
 }
