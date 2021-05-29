@@ -15,12 +15,12 @@ function updateFrames (game) {
   //run scoregame and update total
   document.getElementById('score').innerHTML = scoreGame(game)
 
-  //if perfect game then day so, also play sound
+  //if perfect game then say so, also play sound
   if (scoreGame(game) == 300) {
     document.getElementById('score').innerHTML = scoreGame(game) + '<br> PERFECT GAME!'
     document.getElementById("perfect").play();
   }
-  //update max score for balls
+  //update user interface
   updateElements(game)
 }
 
@@ -82,9 +82,11 @@ function updateElements (game) {
       document.getElementById('frame10').style.backgroundColor = "paleTurquoise"
     } else {
       document.getElementById(balls[9][2]).style.visibility = "hidden"
+      document.getElementById(balls[9][2]).value = 0
+      updateFrames()
     }
 
-    if (game[9][1] == 10 || game[9][2]) {
+    if (game[9][1] == 10 || game[9][2] == 10) {
       document.getElementById("strike").play();
     }
 }
