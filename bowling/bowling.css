@@ -1,3 +1,14 @@
+
+body {
+    background-image: url("https://www.usada.org/wp-content/uploads/bowling_post.jpg");
+    background-color: rgba(255,255,255,0.6);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: lighten;
+  }
+
 div {
     border: 3px, solid, black;
     
