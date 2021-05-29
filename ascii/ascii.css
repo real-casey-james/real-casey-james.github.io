@@ -53,3 +53,7 @@ input {
     height: 38px;
     text-align: center;
 }
+
+#artContainer {
+    margin-top: 30px;
+}
