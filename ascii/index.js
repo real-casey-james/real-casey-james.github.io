@@ -6,7 +6,7 @@ function fetcher () {(async () => {
   console.log(data)
   let htmlString = '';
   for (let file of data) {
-    htmlString += `<button onclick="getFile('${file.path}')">${file.name.slice(0,-4)}</button>`;
+    htmlString += `<button onclick="getFile('${file.path.slice(5)}')">${file.name.slice(0,-4)}</button>`;
   }
 
   document.getElementById('buttonContainer').outerHTML = htmlString;
