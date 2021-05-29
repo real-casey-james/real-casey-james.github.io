@@ -51,7 +51,6 @@ function updateElements (game) {
       
       document.getElementById('frame' + (i + 1) + 'score').innerHTML = scoreStrike([game[i], game[i+1]])
 
-      //add sound effect
     } else if (game[i][0] + game[i][1] == 10) {
       //if its a spare, do this
       document.getElementById('frame' + (i + 1)).style.backgroundColor = "paleTurquoise"
@@ -84,7 +83,7 @@ function updateElements (game) {
       document.getElementById(balls[9][2]).style.visibility = "hidden"
       document.getElementById(balls[9][2]).value = 0
       game[9][2] = 0
-      updateFrames()
+      document.getElementById('frame10score').innerHTML = game[9][0] + game[9][1] + game[9][2]
     }
 
     if (game[9][1] == 10 || game[9][2] == 10) {
