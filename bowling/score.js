@@ -83,6 +83,7 @@ function updateElements (game) {
     } else {
       document.getElementById(balls[9][2]).style.visibility = "hidden"
       document.getElementById(balls[9][2]).value = 0
+      game[9][2] = 0
       updateFrames()
     }
 
