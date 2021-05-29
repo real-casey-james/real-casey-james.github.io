@@ -2,35 +2,36 @@ body {
     color: black;
     background-color: white;
     font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
 }
-
-
 
 button  {
     height: 50px;
     margin: 20px;
     min-width: 100px;
     font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
 }
 
 pre {
     display: block;
     font-size: 13px;
     font-family: 'Roboto Mono', monospace;
-    font-weight: lighter;
+    font-weight: bold;
     text-align: center;
 }
 
 label {
     display: inline-block;
     text-align: center;
-    width: 80px;
     font-size: 13px;
+    margin-left: 5px;
+    margin-bottom: 4px;
 }
 
 input {
-    height: 50px;
-    width: 70px;
+    height: 40px;
+    width: 90px;
     display: block;
 }
 
