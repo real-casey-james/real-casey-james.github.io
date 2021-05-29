@@ -1,16 +1,4 @@
 <!DOCTYPE html>
-
-<!--TODO
-
-    score for each frame
-    update min and max for each frame as rolls are entered
-    grey out second ball on strike
-    green for strike
-    sound for strike
-    fonts
-    
-
--->
 <html>
     <head>
 
@@ -20,13 +8,13 @@
 
         <link href="bowling.css" rel="stylesheet">
 
-        <title>Bowling Scorer</title>
+        <title>Bowling Score Calculator</title>
     </head>
     
     <body>
 
         <main>
-            <h1>Bowling Scorer</h1>
+            <h1>Bowling Score Calculator</h1>
             <section>
 
                 <div id='mainContainer'>
@@ -37,6 +25,8 @@
                         <div class='ball'>
                             <input type='number' value="0" id='ball2' min="0" max="10">
                         </div>
+                        <p class="framescore" id="frame1score">0</p>
+                        <p id="frame1text"></p>
                     </div>
                     <div class='frame' id='frame2'><h3>Frame 2</h3>
                         <div class='ball'>
@@ -45,6 +35,8 @@
                         <div class='ball'>
                             <input type='number' value="0" id='ball4' min="0" max="10">
                         </div>
+                        <p class="framescore" id="frame2score">0</p>
+                        <p id="frame2text"></p>
                     </div>
                     <div class='frame' id='frame3'><h3>Frame 3</h3>
                         <div class='ball'>
@@ -53,6 +45,8 @@
                         <div class='ball'>
                             <input type='number' value="0" id='ball6' min="0" max="10">
                         </div>
+                        <p class="framescore" id="frame3score">0</p>
+                        <p id="frame3text"></p>
                     </div>
                     <div class='frame' id='frame4'><h3>Frame 4</h3>
                         <div class='ball'>
@@ -61,6 +55,8 @@
                         <div class='ball'>
                             <input type='number' value="0" id='ball8' min="0" max="10">
                         </div>
+                        <p class="framescore" id="frame4score">0</p>
+                        <p id="frame4text"></p>
                     </div>
                     <div class='frame' id='frame5'><h3>Frame 5</h3>
                         <div class='ball'>
@@ -69,6 +65,8 @@
                         <div class='ball'>
                             <input type='number' value="0" id='ball10' min="0" max="10">
                         </div>
+                        <p class="framescore" id="frame5score">0</p>
+                        <p id="frame5text"></p>
                     </div>
                     <div class='frame' id='frame6'><h3>Frame 6</h3>
                         <div class='ball'>
@@ -77,6 +75,8 @@
                         <div class='ball'>
                             <input type='number' value="0" id='ball12' min="0" max="10">
                         </div>
+                        <p class="framescore" id="frame6score">0</p>
+                        <p id="frame6text"></p>
                     </div>
                     <div class='frame' id='frame7'><h3>Frame 7</h3>
                         <div class='ball'>
@@ -85,6 +85,8 @@
                         <div class='ball'>
                             <input type='number' value="0" id='ball14' min="0" max="10">
                         </div>
+                        <p class="framescore" id="frame7score">0</p>
+                        <p id="frame7text"></p>
                     </div>
                     <div class='frame' id='frame8'><h3>Frame 8</h3>
                         <div class='ball'>
@@ -93,6 +95,8 @@
                         <div class='ball'>
                             <input type='number' value="0" id='ball16' min="0" max="10">
                         </div>
+                        <p class="framescore" id="frame8score">0</p>
+                        <p id="frame8text"></p>
                     </div>
                     <div class='frame' id='frame9'><h3>Frame 9</h3>
                         <div class='ball'>
@@ -101,6 +105,8 @@
                         <div class='ball'>
                             <input type='number' value="0" id='ball18' min="0" max="10">
                         </div>
+                        <p class="framescore" id="frame9score">0</p>
+                        <p id="frame9text"></p>
                     </div>
                     <div class='frame' id='frame10'><h3>Frame 10</h3>
                         <div class='ball'>
@@ -110,15 +116,17 @@
                             <input type='number' value="0" id='ball20' min="0" max="10">
                         </div>
                         <div class='ball'>
-                            <input type='number' value="0" id='ball21' min="0" max="10">
+                            <input type='number' value="0" id='ball21' min="0" max="10" style="visibility: hidden;">
                         </div>
+                        <p class="framescore" id="frame10score">0</p>
                     </div>
                 </div>
 
-                <h3>Total score: <div id='score'>0</div></h3>
+                <h2>Total score: <div id='score'>0</div></h2>
 
             </section>
-
+            <audio id="strike"><source src="audio/strike.wav" type="audio/wav"></audio>
+            <audio id="perfect"><source src="audio/perfect.wav" type="audio/wav"></audio>
         </main>
    
         <footer>

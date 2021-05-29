@@ -2,7 +2,7 @@ let game = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 
 
 let balls = [['ball1', 'ball2'], ['ball3', 'ball4'], ['ball5', 'ball6'],['ball7', 'ball8'], ['ball9','ball10'], ['ball11', 'ball12'],['ball13', 'ball14'], ['ball15','ball16'], ['ball17', 'ball18'],['ball19', 'ball20', 'ball21']]
 
-document.addEventListener("click", () => updateFrames(game))
+document.addEventListener("input", () => updateFrames(game))
 
 function updateFrames (game) {
   //loop through each frame, get ball by id, update game array
@@ -14,24 +14,79 @@ function updateFrames (game) {
   game[9][2] = Number(document.getElementById(balls[9][2]).value)
   //run scoregame and update total
   document.getElementById('score').innerHTML = scoreGame(game)
+
+  //if perfect game then day so, also play sound
+  if (scoreGame(game) == 300) {
+    document.getElementById('score').innerHTML = scoreGame(game) + '<br> PERFECT GAME!'
+    document.getElementById("perfect").play();
+  }
   //update max score for balls
-  updateMax(game)
+  updateElements(game)
 }
 
-function updateMax (game) {
+function updateElements (game) {
+  //manipulate the DOM based on rolls
   for (var i = 0; i < 9; i++) {
+    //update max ball totals based on input
     document.getElementById(balls[i][0]).max = 10 - game[i][1]
     document.getElementById(balls[i][1]).max = 10 - game[i][0]
+    //update frame score
+    document.getElementById('frame' + (i + 1) + 'score').innerHTML = scoreFrame(game[i])
 
-    if (game[i][0] == 10) {
+    if (game[i][0] == 10 && game[i+1][0] == 10 && i != 8) {
+      //if its a double strike (and not the 9th frame), do this
       document.getElementById(balls[i][1]).style.visibility = "hidden"
+      document.getElementById('frame' + (i + 1)).style.backgroundColor = "paleGreen"
+      document.getElementById('frame' + (i + 1) + 'text').innerHTML = "STRIKE!"
+      document.getElementById("strike").play();
       
+      document.getElementById('frame' + (i + 1) + 'score').innerHTML = scoreDoubleStrike([game[i], game[i+1], game[i+2]])
+
+    } else if (game[i][0] == 10) {
+      //if its a strike, do this
+      document.getElementById(balls[i][1]).style.visibility = "hidden"
+      document.getElementById('frame' + (i + 1)).style.backgroundColor = "paleGreen"
+      document.getElementById('frame' + (i + 1) + 'text').innerHTML = "STRIKE!"
+      document.getElementById("strike").play();
       
-      //sound effect
-    } else {
+      document.getElementById('frame' + (i + 1) + 'score').innerHTML = scoreStrike([game[i], game[i+1]])
+
+      //add sound effect
+    } else if (game[i][0] + game[i][1] == 10) {
+      //if its a spare, do this
+      document.getElementById('frame' + (i + 1)).style.backgroundColor = "paleTurquoise"
+      document.getElementById('frame' + (i + 1) + 'text').innerHTML = "SPARE!"
+      document.getElementById('frame' + (i + 1) + 'score').innerHTML = scoreSpare([game[i], game[i+1]])
+    }
+    
+    else {
+      //put everything back if it isn't a strike or a spare
       document.getElementById(balls[i][1]).style.visibility = "visible"
+      document.getElementById('frame' + (i + 1)).style.backgroundColor = "#fdb768"
+      document.getElementById('frame' + (i + 1) + 'text').innerHTML = ""
     }
   }
+  //deal with the last frame
+    document.getElementById(balls[9][0]).max = 10 - game[9][1]
+    document.getElementById(balls[9][1]).max = 10 - game[9][0]
+    document.getElementById('frame10score').innerHTML = game[9][0] + game[9][1] + game[9][2]
+    
+    if (game[9][0] == 10) {
+      document.getElementById('ball20').max = 10
+      document.getElementById(balls[9][2]).style.visibility = "visible"
+      document.getElementById('frame10').style.backgroundColor = "paleGreen"
+      document.getElementById("strike").play();
+    } else if (game[9][0] + game[9][1] == 10) {
+    
+      document.getElementById(balls[9][2]).style.visibility = "visible"
+      document.getElementById('frame10').style.backgroundColor = "paleTurquoise"
+    } else {
+      document.getElementById(balls[9][2]).style.visibility = "hidden"
+    }
+
+    if (game[9][1] == 10 || game[9][2]) {
+      document.getElementById("strike").play();
+    }
 }
 
 
