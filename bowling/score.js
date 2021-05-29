@@ -114,28 +114,25 @@ function scoreDoubleStrike(frames) {
 }
 
 
-
-
-function scoreGame(frames) {
-  let score = 0
-  score += frames.flat()[20]
-  for (let x = 0; x < frames.length; x++) {
-    //points for regular frame 
-      if (frames[x][0] + frames[x][1] !== 10)
-       {score += scoreFrame(frames[x])} 
-    //points for spares   
-      else if (frames[x][0] + frames[x][1] === 10 && frames[x][0] !== 10)
-       {score += scoreSpare([frames[x],frames[x+1]])}
-    //points for strikes      
-      if (frames[x][0] === 10 && frames[x+1][0] != 10)
-          {score += scoreStrike([frames[x],frames[x+1]])}
-    //points for double strikes      
-      if (frames[x][0] === 10 && frames[x+1][0] == 10)
-          {score += scoreDoubleStrike([frames[x],frames[x+1],frames[x+2]])}
-      }return score
-
-}
-
-module.exports = {
-  scoreGame
-}
+function scoreGame (score) {
+  var total = 0
+  for (var i = 0; i < score.length; i++) {
+      if (score[i][0]+score[i][1] !== 10) {
+        total += score[i][0] + score[i][1]
+    } else if (score[i][0] === 10) {
+          if (score[i + 1][0] + score[i + 1][1] !== 10) {
+            total += score[i][0] + score[i + 1][0] + score[i + 1][1]
+        } else if (score[i + 1][0] === 10) {
+            total += score[i][0] + score[i + 1][0] + score[i + 2][0]
+        } else if (score[i + 1][0] + score[i + 1][1] === 10) {
+            total += score[i][0] + score[i + 1][0] + score[i + 1][1]
+        }
+    } else if (score[i][0]+score[i][1] === 10) {
+        total += score[i][0] + score[i][1] + score[i + 1][0]
+    }
+  }
+  if (score[9][2] != undefined) {
+    total += score[9][2]
+  }
+  return total
+  }
