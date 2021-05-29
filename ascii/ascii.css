@@ -1,0 +1,47 @@
+body {
+    color: black;
+    background-color: white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+
+button  {
+    height: 50px;
+    margin: 20px;
+    min-width: 100px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+pre {
+    display: block;
+    font-size: 13px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: lighter;
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    text-align: center;
+    width: 80px;
+    font-size: 13px;
+}
+
+input {
+    height: 50px;
+    width: 70px;
+    display: block;
+}
+
+#interface {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div {
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px
+}

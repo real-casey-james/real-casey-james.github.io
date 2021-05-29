@@ -3,24 +3,33 @@
   <head>
     <title>ASCII Art</title>
     <link href="ascii.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>ASCII Art</h1>
 
-    <div id="buttonContainer">
+    <pre>
+         _____    __________________ .___.___     _____          __    ____   ____.__                            
+        /  _  \  /   _____/\_   ___ \|   |   |   /  _  \________/  |_  \   \ /   /|__| ______  _  __ ___________ 
+       /  /_\  \ \_____  \ /    \  \/|   |   |  /  /_\  \_  __ \   __\  \   Y   / |  |/ __ \ \/ \/ // __ \_  __ \
+      /    |    \/        \\     \___|   |   | /    |    \  | \/|  |     \     /  |  \  ___/\     /\  ___/|  | \/
+      \____|__  /_______  / \______  /___|___| \____|__  /__|   |__|      \___/   |__|\___  >\/\_/  \___  >__|   
+                                                                                              
+    </pre>
+
+    <div id="interface">
+    <div><label for="textColor">Text: </label><input id="textColor" type="color" oninput="changeColor()"></div>
+    <div><label for="backgroundColor"> Background: </label><input id="backgroundColor" type="color" value="#ffffff" oninput="changeColor()"></div>
+
+    <span id="buttonContainer">
        <button onclick="fetcher()">Fetch Artwork</button> 
+    </span>
     </div>
-    select colours
 
-    button - fetch art - then turns to art
-    
-    buttons for each file
+    <pre><div id="artContainer">
 
-    buttons for functions/comments
+    </div></pre>
 
-    <!-- <script src="bundle.js"></script> -->
     <script src="index.js"></script>
 </body>
 </html>
