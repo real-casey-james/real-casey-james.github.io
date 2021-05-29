@@ -25,3 +25,7 @@ function changeColor() {
   document.body.style.color = document.getElementById("textColor").value;
   document.body.style.backgroundColor = document.getElementById("backgroundColor").value;
 }
+
+function changeFont() {
+  document.getElementById("art").style.fontSize = document.getElementById("fontSize").value + 'px'
+}
