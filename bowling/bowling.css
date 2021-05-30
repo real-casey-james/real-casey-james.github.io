@@ -39,6 +39,7 @@ h3 {
 input {
     width: 70px;
     font-size: 40px;
+    text-align: center;
 }
 
 
@@ -69,4 +70,9 @@ input {
 
   #score {
       font-size: 50px;
+  }
+
+  p {
+      font-size: 20px;
+      font-weight: bold;
   }

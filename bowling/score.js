@@ -33,14 +33,14 @@ function updateElements (game) {
       document.getElementById(balls[i][1]).style.visibility = "hidden"
       document.getElementById('frame' + (i + 1)).style.backgroundColor = "paleGreen"
       document.getElementById('frame' + (i + 1) + 'text').innerHTML = "STRIKE!"
-      // document.getElementById("strike").play();
+      strikeSound(i)
       document.getElementById('frame' + (i + 1) + 'score').innerHTML = scoreDoubleStrike([game[i], game[i+1], game[i+2]])
     } else if (game[i][0] == 10) {
       //if its a strike, hide second ball, change frame color, show strike text, update frame score
       document.getElementById(balls[i][1]).style.visibility = "hidden"
       document.getElementById('frame' + (i + 1)).style.backgroundColor = "paleGreen"
       document.getElementById('frame' + (i + 1) + 'text').innerHTML = "STRIKE!"
-      // document.getElementById("strike").play();
+      strikeSound(i)
       document.getElementById('frame' + (i + 1) + 'score').innerHTML = scoreStrike([game[i], game[i+1]])
     } else if (game[i][0] + game[i][1] == 10) {
       //if its a spare, change frame color, show spare text, update frame score
@@ -52,6 +52,7 @@ function updateElements (game) {
       document.getElementById(balls[i][1]).style.visibility = "visible"
       document.getElementById('frame' + (i + 1)).style.backgroundColor = "#fdb768"
       document.getElementById('frame' + (i + 1) + 'text').innerHTML = ""
+      strikes[i] = false
     }
   }
   //deal with the last frame
@@ -65,7 +66,7 @@ function updateElements (game) {
       document.getElementById('ball20').max = 10
       document.getElementById(balls[9][2]).style.visibility = "visible"
       document.getElementById('frame10').style.backgroundColor = "paleGreen"
-      // document.getElementById("strike").play();
+      strikeSound(i)
     } else if (game[9][0] + game[9][1] == 10) {
       //if last frame is a spare, show third ball, change frame color
       document.getElementById(balls[9][2]).style.visibility = "visible"
@@ -80,14 +81,27 @@ function updateElements (game) {
       document.getElementById('score').innerHTML = scoreGame(game)
     }
 
-    // if (game[9][1] == 10 || game[9][2] == 10) {
-    //   // document.getElementById("strike").play();
-    // }
+    if (game[9][1] == 10) {
+      strikeSound(10)
+    }
+
+    if (game[9][2] == 10) {
+      strikeSound(11)
+    }
 
     //if perfect game then say so, and play sound
   if (scoreGame(game) == 300) {
     document.getElementById('score').innerHTML = scoreGame(game) + '<br> PERFECT GAME!'
     document.getElementById("perfect").play();
+  }
+}
+
+let strikes = [false, false, false, false, false, false, false, false, false, false, false, false, false]
+
+function strikeSound(frame) {
+  if (strikes[frame] == false) {
+    document.getElementById("strike").play();
+    strikes[frame] = true
   }
 }
 
