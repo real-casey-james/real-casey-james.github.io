@@ -1,6 +1,6 @@
 
 let rows = 50
-let cols = 50
+let cols = 80
 let random = 0.5
 let refreshInterval = 500
 let cellsize = 15
@@ -9,10 +9,6 @@ let deadcolor = "#ff3300"
 let backgroundcolor = "ffffff"
 
 let board = createBoard (rows, cols)
-
-// board[0][1] = true
-// board[1][1] = true
-// board[2][1] = true
 
 //draws html on screen
 function drawBoard () {
@@ -62,28 +58,19 @@ function randomize (board) {
   drawBoard()
 }
 
-//I was trying to be a fancy boy and allow the user to change the rows and columns independently, but I think the functions don't like non-square boards. maybe I'll fix it later
-
-function setSize() {
-  rows = Number(document.getElementById("size").value)
-  cols = Number(document.getElementById("size").value)
+function setRows() {
+  rows = Number(document.getElementById("rows").value)
   board = createBoard (rows, cols, random)
   drawBoard()
   randomize(board)
 }
-// function setRows() {
-//   rows = Number(document.getElementById("rows").value)
-//   board = createBoard (rows, cols, random)
-//   drawBoard()
-//   randomize(board)
-// }
 
-// function setCols() {
-//   cols = Number(document.getElementById("cols").value)
-//   board = createBoard (rows, cols, random)
-//   drawBoard()
-//   randomize(board)
-// }
+function setCols() {
+  cols = Number(document.getElementById("cols").value)
+  board = createBoard (rows, cols, random)
+  drawBoard()
+  randomize(board)
+}
 
 function aliveRandom() {
   random = Number(document.getElementById("aliveCells").value) / 100
@@ -134,19 +121,26 @@ function toggler(row, col) {
 
 //these functions help the thing run
 
-
 function countAliveNeighbours (cellRow, cellColumn, board) {
-  return getNeighbours(cellRow, cellColumn, board)
-    .filter(cell => !!cell)
-    .length
+  var neighbours = getNeighbours(cellRow, cellColumn, board)
+  var answer = 0
+
+  for (var i = 0; i < neighbours.length; i++) {
+      if (neighbours[i] == true) {
+          answer++
+      }
+  }
+  return answer
 }
 
-function createBoard (size) {
-  return createArray(size).map(_ => createArray(size, false))
-}
-
-function createArray(size, fill = null) {
-  return (new Array(size)).fill(fill)
+function createBoard (rows, cols) {
+  let matrix = new Array ()
+  for (let x = 0; x < rows; x++){
+    matrix[x] = new Array ()
+    for (let y = 0; y < cols; y++){
+      matrix[x][y] = false
+    } 
+  } return matrix
 }
 
 function getNeighbours (cellRow, cellColumn, board) {
@@ -166,11 +160,11 @@ function getNeighbours (cellRow, cellColumn, board) {
   }
 
 function indicesAreOutOfBounds (rowIndex, columnIndex, array) {
-  return isOutOfBounds(rowIndex, array) || isOutOfBounds(columnIndex, array)
+  return isOutOfBounds(rowIndex, array.length) || isOutOfBounds(columnIndex, array[0].length)
 }
 
 function isOutOfBounds (index, array) {
-  return index < 0 || index >= array.length
+  return index < 0 || index >= array
 }
 
 function isOverPopulated (neighbourCount) {
@@ -188,23 +182,6 @@ function isUnderPopulated (neighbourCount) {
 function nextBoard (currentBoard) {
   return currentBoard.map((row, cellRow) => row.map((cell, cellColumn) => nextCellState(cell, countAliveNeighbours(cellRow, cellColumn, currentBoard))))
 }
-
-
-// function nextBoard (currentBoard) {
-  
-//   let newBoard = [...currentBoard]
-//   for (var i = 0; i < rows; i++) {
-//       for (var j = 0; j < cols; j++) {
-
-//           if (nextCellState(currentBoard[i][j], countAliveNeighbours([i], [j], currentBoard)) == true) {
-//               newBoard[i][j] = true
-//           } else {
-//               newBoard[i][j] = false
-//           }
-//       }
-//   }
-//   return newBoard
-// }
 
 function nextCellState (cellState, neighbourCount) {
   if (cellState == true) {

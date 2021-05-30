@@ -10,9 +10,8 @@
     <h1>Conways Game of Life</h1>
 
     <div id="interface">
-        <div class="flexItems"><label for="size">size: </label><input id="size" type="number" min="3" value="50" oninput="setSize()"></div>
-        <!-- <div class="flexItems"><label for="rows">rows: </label><input id="rows" type="number" min="3" value="10" oninput="setRows()"></div>
-        <div class="flexItems"><label for="cols">columns: </label><input id="cols" type="number" min="3" value="10" oninput="setCols()"></div> -->
+        <div class="flexItems"><label for="rows">rows: </label><input id="rows" type="number" min="3" value="50" oninput="setRows()"></div>
+        <div class="flexItems"><label for="cols">columns: </label><input id="cols" type="number" min="3" value="80" oninput="setCols()"></div>
         <div class="flexItems"><label for="cellSize">cell size: </label><input id="cellSize" type="number" min="3" oninput="setCellSize()" value="15"></div>
         <div class="flexItems"><label for="alive">% alive: </label><input id="aliveCells" type="number" min="1" max="100" oninput="aliveRandom()" value="50"></div>
         <div class="flexItems"><button id="randomise" onclick="randomize(board)">randomize</button></div>
