@@ -59,7 +59,7 @@ select {
     width: 30px;
     height: 30px;
     padding: 0px;
-    margin: 0px
+    margin: 0px;
   }
 
   .dead {
@@ -81,7 +81,8 @@ select {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
+    border-spacing: 0px;
   }
 
   h1 {

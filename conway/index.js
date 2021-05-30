@@ -8,12 +8,13 @@ let alivecolor = "#009900"
 let deadcolor = "#ff3300"
 let backgroundcolor = "ffffff"
 let timerOnOff = "off"
+let callSpacing = 0
 
 let board = createBoard (rows, cols)
 
 //draws html on screen
 function drawBoard () {
-  var newHTML = '<table>'
+  var newHTML = '<table id="gameBoard">'
   for (var i = 0; i < rows; i++) {
     newHTML += '<tr>'
     for (var j = 0; j < cols; j++) {
@@ -28,6 +29,7 @@ function drawBoard () {
   newHTML += '</table>'
   document.getElementById('boardContainer').innerHTML = newHTML
   setCellSize()
+  setCellSpacing()
   changeAlive()
   changeDead()
 }
@@ -105,6 +107,11 @@ function setCellSize () {
     x[i].style.width = cellsize + 'px'
     x[i].style.height = cellsize + 'px'
   }
+}
+
+function setCellSpacing() {
+  console.log('called')
+  document.getElementById("gameBoard").style.borderSpacing = document.getElementById('cellSpacing').value + 'px'
 }
 
 function changeRefresh() {
