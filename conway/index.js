@@ -7,6 +7,7 @@ let cellsize = 15
 let alivecolor = "#009900"
 let deadcolor = "#ff3300"
 let backgroundcolor = "ffffff"
+let timerOnOff = "off"
 
 let board = createBoard (rows, cols)
 
@@ -24,17 +25,18 @@ function drawBoard () {
     }
     newHTML += '</tr>'
   }
+  newHTML += '</table>'
   document.getElementById('boardContainer').innerHTML = newHTML
   setCellSize()
   changeAlive()
   changeDead()
 }
 
-drawBoard()
 randomize(board)
 
 var timer
 function go () {
+  timerOnOff = "on"
   timer = setInterval(() => {
       drawBoard()
       board = nextBoard(board)
@@ -42,7 +44,8 @@ function go () {
 }
 
 function stop () {
-        clearInterval(timer)
+  timerOnOff = "off"      
+  clearInterval(timer)
 }
 
 function randomize (board) {
@@ -105,7 +108,11 @@ function setCellSize () {
 }
 
 function changeRefresh() {
-  refreshInterval = document.getElementById("refresh").value
+  refreshInterval = document.getElementById("refresh").value * 1000
+  if (timerOnOff == "on") {
+    stop()
+    go()
+  }
 }
 
 function toggler(row, col) {
@@ -298,7 +305,5 @@ function bandersnatch() {
   board[19][46] = true
   board[18][45] = true
   
-  refreshInterval = 100
-  changeRefresh()
   drawBoard()
 }
