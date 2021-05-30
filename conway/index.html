@@ -16,6 +16,12 @@
         <div class="flexItems"><label for="alive">% alive: </label><input id="aliveCells" type="number" min="1" max="100" oninput="aliveRandom()" value="50"></div>
         <div class="flexItems"><button id="randomise" onclick="randomize(board)">randomize</button></div>
         <div class="flexItems"><button id="clear" onclick="reset(board)">clear</button></div>
+        <div class="flexItems">
+            <select id="patterns" onchange="changePattern()">
+                <option>patterns</option>
+                <option value="1">test pattern</option>
+                <option value="2">bandersnatch</option>
+            </select></div>
         <div class="flexItems"><label for="backgroundColor"> background: </label><input id="backgroundColor" type="color" value="#ffffff" oninput="changeBackground()"></div>
         <div class="flexItems"><label for="aliveColor"> alive: </label><input id="aliveColor" type="color" oninput="changeAlive()" value="#009900"></div>
         <div class="flexItems"><label for="aliveColor"> dead: </label><input id="deadColor" type="color" value="#ff3300" oninput="changeDead()"></div>

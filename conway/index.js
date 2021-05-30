@@ -61,19 +61,18 @@ function randomize (board) {
 function setRows() {
   rows = Number(document.getElementById("rows").value)
   board = createBoard (rows, cols, random)
-  drawBoard()
   randomize(board)
 }
 
 function setCols() {
   cols = Number(document.getElementById("cols").value)
   board = createBoard (rows, cols, random)
-  drawBoard()
   randomize(board)
 }
 
 function aliveRandom() {
   random = Number(document.getElementById("aliveCells").value) / 100
+  randomize(board)
 }
 
 function changeBackground() {
@@ -121,9 +120,7 @@ function toggler(row, col) {
 function reset(board) {
   for (var i = 0; i < rows; i++) {
     for (var j = 0; j < cols; j++) {
-      
         board[i][j] = false
-    
     }
   }
   drawBoard()
@@ -207,4 +204,101 @@ function nextCellState (cellState, neighbourCount) {
   } else {
       return false
   }
+}
+
+//super secret functionality you discovered just by scrolling
+//actually just patterns that take up lots of room
+
+var menu = document.getElementById("patterns");
+
+function changePattern() {
+  if (menu.value == '1') {
+    testPattern()
+  } else if (menu.value == '2') {
+    bandersnatch()
+  }
+}
+
+function testPattern() {
+  reset(board)
+  for (var i = 2; i < rows - 3; i+=12) {
+    for (var j = 2; j < cols - 3; j+=6) {
+        board[i][j] = true
+        board[i][j+1] = true
+        board[i][j+2] = true
+        board[i+4][j] = true
+        board[i+5][j] = true
+        board[i+6][j] = true
+    }
+  }
+  drawBoard()
+}
+
+function bandersnatch() {
+  reset(board)
+  board[16][16] = true
+  board[17][17] = true
+  board[17][18] = true
+  board[18][16] = true
+  board[18][17] = true
+
+  board[39][18] = true
+  board[37][19] = true
+  board[38][19] = true
+  board[39][19] = true
+  board[36][20] = true
+  board[36][21] = true
+  board[37][21] = true
+  
+  board[22][31] = true
+  board[23][31] = true
+  board[22][32] = true
+  board[23][32] = true
+
+  board[44][35] = true
+  board[45][35] = true
+  board[44][36] = true
+  board[45][37] = true
+
+  board[33][36] = true
+  board[34][36] = true
+  board[32][37] = true
+  board[35][37] = true
+  board[33][38] = true
+  board[35][38] = true
+  board[34][39] = true
+
+  board[38][44] = true
+  board[39][44] = true
+  board[38][45] = true
+  board[39][45] = true
+
+  board[31][46] = true
+  board[32][46] = true
+  board[31][47] = true
+  board[32][47] = true
+
+  board[24][43] = true
+  board[24][44] = true
+  board[24][46] = true
+  board[23][43] = true
+  board[23][44] = true
+  board[23][46] = true
+  board[23][47] = true
+  board[23][48] = true
+  board[22][49] = true
+  board[21][43] = true
+  board[21][44] = true
+  board[21][46] = true
+  board[21][47] = true
+  board[21][48] = true
+  board[20][44] = true
+  board[20][46] = true
+  board[19][44] = true
+  board[19][46] = true
+  board[18][45] = true
+  
+  refreshInterval = 100
+  changeRefresh()
+  drawBoard()
 }

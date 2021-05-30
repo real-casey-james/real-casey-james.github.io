@@ -37,6 +37,11 @@ input {
     text-align: center;
 }
 
+select {
+  height: 45px;
+  width: 110px;
+}
+
 #interface {
     display: flex;
     flex-wrap: wrap;
