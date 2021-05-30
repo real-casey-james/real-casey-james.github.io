@@ -118,8 +118,17 @@ function toggler(row, col) {
   drawBoard()
 }
 
+function reset(board) {
+  for (var i = 0; i < rows; i++) {
+    for (var j = 0; j < cols; j++) {
+      
+        board[i][j] = false
+    
+    }
+  }
+  drawBoard()
+}
 
-//these functions help the thing run
 
 function countAliveNeighbours (cellRow, cellColumn, board) {
   var neighbours = getNeighbours(cellRow, cellColumn, board)
