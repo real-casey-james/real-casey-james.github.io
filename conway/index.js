@@ -5,10 +5,10 @@ let random = 0.5
 let refreshInterval = 500
 let cellsize = 15
 let alivecolor = "#009900"
-let deadcolor = "#ff3300"
+let deadcolor = "#000000"
 let backgroundcolor = "ffffff"
 let timerOnOff = "off"
-let callSpacing = 0
+// let callSpacing = 0
 
 let board = createBoard (rows, cols)
 
