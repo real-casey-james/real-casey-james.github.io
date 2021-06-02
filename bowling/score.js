@@ -31,26 +31,26 @@ function updateElements (game) {
     if (game[i][0] == 10 && game[i+1][0] == 10 && i != 8) {
       //if its a double strike (and not the 9th frame), hide second ball, change frame color, show strike text, update frame score
       document.getElementById(balls[i][1]).style.visibility = "hidden"
-      document.getElementById('frame' + (i + 1)).style.backgroundColor = "paleGreen"
+      document.getElementById('frame' + (i + 1)).style.border = "5px solid #975102";
       document.getElementById('frame' + (i + 1) + 'text').innerHTML = "STRIKE!"
       strikeSound(i)
       document.getElementById('frame' + (i + 1) + 'score').innerHTML = scoreDoubleStrike([game[i], game[i+1], game[i+2]])
     } else if (game[i][0] == 10) {
       //if its a strike, hide second ball, change frame color, show strike text, update frame score
       document.getElementById(balls[i][1]).style.visibility = "hidden"
-      document.getElementById('frame' + (i + 1)).style.backgroundColor = "paleGreen"
+      document.getElementById('frame' + (i + 1)).style.border = "5px solid #975102";
       document.getElementById('frame' + (i + 1) + 'text').innerHTML = "STRIKE!"
       strikeSound(i)
       document.getElementById('frame' + (i + 1) + 'score').innerHTML = scoreStrike([game[i], game[i+1]])
     } else if (game[i][0] + game[i][1] == 10) {
       //if its a spare, change frame color, show spare text, update frame score
-      document.getElementById('frame' + (i + 1)).style.backgroundColor = "paleTurquoise"
+      document.getElementById('frame' + (i + 1)).style.border = "5px double #975102";
       document.getElementById('frame' + (i + 1) + 'text').innerHTML = "SPARE!"
       document.getElementById('frame' + (i + 1) + 'score').innerHTML = scoreSpare([game[i], game[i+1]])
     } else {
       //put everything back if it isn't a strike or a spare anymore
       document.getElementById(balls[i][1]).style.visibility = "visible"
-      document.getElementById('frame' + (i + 1)).style.backgroundColor = "#fdb768"
+      document.getElementById('frame' + (i + 1)).style.border = "5px solid #fb8604";
       document.getElementById('frame' + (i + 1) + 'text').innerHTML = ""
       strikes[i] = false
     }
@@ -65,19 +65,19 @@ function updateElements (game) {
       //if first ball of last frame is a strike, allow second ball to be rolled, show third ball, change frame color
       document.getElementById('ball20').max = 10
       document.getElementById(balls[9][2]).style.visibility = "visible"
-      document.getElementById('frame10').style.backgroundColor = "paleGreen"
+      document.getElementById('frame10').style.border = "5px solid #975102";
       strikeSound(i)
     } else if (game[9][0] + game[9][1] == 10) {
       //if last frame is a spare, show third ball, change frame color
       document.getElementById(balls[9][2]).style.visibility = "visible"
-      document.getElementById('frame10').style.backgroundColor = "paleTurquoise"
+      document.getElementById('frame10').style.border = "5px double #975102";
     } else {
       //if last frame isn't a strike or spare anymore, put everything back, including setting third ball to 0 and updating scores
       document.getElementById(balls[9][2]).style.visibility = "hidden"
       document.getElementById(balls[9][2]).value = 0
       game[9][2] = 0
       document.getElementById('frame10score').innerHTML = game[9][0] + game[9][1] + game[9][2]
-      document.getElementById('frame10').style.backgroundColor = "#fdb768"
+      document.getElementById('frame10').style.border = "5px solid #fb8604";
       document.getElementById('score').innerHTML = scoreGame(game)
     }
 

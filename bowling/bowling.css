@@ -1,18 +1,12 @@
 
 body {
-    background-image: url("https://www.usada.org/wp-content/uploads/bowling_post.jpg");
-    background-color: rgba(255,255,255,0.6);
+    background-color: #FDB768;
     height: 100vh;
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    background-size: cover;
-    background-blend-mode: lighten;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
 div {
     border: 3px, solid, black;
-    
 }
 
 p {
@@ -21,25 +15,41 @@ p {
 
 h1 {
     text-align: center;
-    font-size: 50px;
-    color: gold;
+    font-size: 60px;
+    color: #975102;
+    font-family: 'Luckiest Guy', cursive;
 }
 
 h2 {
     text-align: center;
     font-size: 30px;
-    color: gold;
+    color: #975102;
+    font-family: 'Luckiest Guy', cursive;
+    margin-bottom: 10px;
 }
 
 h3 {
     text-align: center;
-    font-size: 17px;
+    font-size: 40px;
+    color: #975102;
+    margin: 0px 0px 10px 0px;
+    font-family: 'Bangers', cursive;
 }
 
 input {
     width: 70px;
-    font-size: 40px;
+    height: 50px;
+    font-size: 50px;
     text-align: center;
+    border-radius: 10px;
+    color: #342009;
+    background-color: #FDB768;
+    margin-top: 8px;
+    border: none;
+    font-family: 'Bangers', cursive;
+    color: #593307;
+    outline: none;
+    padding-left: 10px;
 }
 
 
@@ -52,12 +62,14 @@ input {
   }
   
 .frame {
-    padding: 20px;
-    background-color: #fdb768;
+    padding: 15px;
+    background-color: #fb8604;
     margin: 20px;
     position: relative;
     width: 80px;
-    height: 250px
+    height: 300px;
+    border-radius: 20px;
+    border: 5px solid #fb8604;
   }
 
   .frame .framescore {
@@ -68,11 +80,31 @@ input {
     transform: translate(-50%, -50%);
   }
 
-  #score {
-      font-size: 50px;
+  p {
+      font-size: 30px;
+      font-weight: bold;
+      color: #975102;
+      text-align: center;
+      font-family: 'Bangers', cursive;
+      margin-top: 25px;
   }
 
-  p {
-      font-size: 20px;
-      font-weight: bold;
+  h4 {
+      display: inline;
+      text-align: center;
+      font-size: 12px;
+  }
+
+  h5 {
+    text-align: center;
+    color: #975102;
+    margin: 0px 0px 10px 0px;
+    font-family: 'Bangers', cursive;
+    font-size: 80px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    width: 20px;
+    height: 50px;
+    margin-right: -2px;
   }
