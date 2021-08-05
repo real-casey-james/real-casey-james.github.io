@@ -1,0 +1,8 @@
+body {
+    background-color: #8CB7F2;
+    display: flex;
+}
+
+canvas {
+    margin: auto;
+}
