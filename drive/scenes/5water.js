@@ -177,8 +177,7 @@ create: function () {
     active: function () {
         scoreText = add.text(70, 12, score, { fontFamily: 'Fredoka One', fontSize: '25px', fill: '#ff3333', stroke: '#ffffff', strokeThickness: 8, shadow: {offsetY: 4, offsetX: 2, color: 'white', fill: true} }).setScrollFactor(0)
     }
-});
-
+    })
 
     function hitStar (duck, star) {
         this.sound.play('quack')
@@ -219,10 +218,10 @@ create: function () {
             ball.setBounce(0.8)
             ball.setCollideWorldBounds(true)
     }
-    this.events.on('blur', () => {
+    this.game.events.on('blur', () => {
         timer.paused = true
     })
-    this.events.on('focus', () => {
+    this.game.events.on('focus', () => {
         timer.paused = false
     })
 },

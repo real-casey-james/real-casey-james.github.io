@@ -7,7 +7,7 @@ let City = new Phaser.Class({
 
     initialize: 
 
-function cityScene () { Phaser.Scene.call(this, { key: 'city', active: false })},
+function city () { Phaser.Scene.call(this, { key: 'city', active: false })},
 
 create: function () {
 
@@ -21,7 +21,7 @@ create: function () {
 
     this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
         this.sound.play('engine')
-        this.scene.start('sceneA', { score: score, carPosX: car.body.position.x, carPosY: car.body.position.y, carVelocity: carVelocity })
+        this.scene.start('village', { score: score, carPosX: car.body.position.x, carPosY: car.body.position.y, carVelocity: carVelocity })
     })
 
     this.physics.world.setBounds(0, 0, 3200, 1920);
@@ -60,7 +60,6 @@ create: function () {
 
     cursors = this.input.keyboard.createCursorKeys();
 
-
     this.add.image(0, 0, 'scoreBackground').setScale(0.55, 0.65).setOrigin(0).setScrollFactor(0)
     this.add.image(40, 25, 'scoreCoin').setScale(0.6).setScrollFactor(0)
     let add = this.add
@@ -80,10 +79,10 @@ create: function () {
         carVelocity += 10
         scoreText.setText(score);
     }
-    this.events.on('blur', () => {
+    this.game.events.on('blur', () => {
         timer.paused = true
     })
-    this.events.on('focus', () => {
+    this.game.events.on('focus', () => {
         timer.paused = false
     })
 },

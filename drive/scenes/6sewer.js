@@ -69,9 +69,9 @@ let Sewer = new Phaser.Class({
         const allTiles = [tileset, tileset2]
         const backgroundTile = map.addTilesetImage('SewerBackground', 'SewerBackground')
         
-        const roadLayer = map.createLayer('Sewer Road', sewerTiles)
-        const pathLayer = map.createLayer('Sewer Footpath', sewerTiles)
-        let RatLayer = map.getObjectLayer('Sheep')['objects']
+        map.createLayer('Sewer Road', sewerTiles)
+        map.createLayer('Sewer Footpath', sewerTiles)
+        const RatLayer = map.getObjectLayer('Sheep')['objects']
         const backgroundLayer = map.createLayer('Sewer Background', backgroundTile)
         backgroundLayer.setAlpha(0.5)
         const dragonLayer = map.getObjectLayer('Dragons')['objects']
@@ -96,32 +96,31 @@ let Sewer = new Phaser.Class({
             obj.setOrigin(0,1)
         })
 
-        
         backgroundLayer.setPipeline('Light2D');
         this.lights.enable();
         this.lights.setAmbientColor('#2D313C');
-        let light = this.lights.addLight(0, 0, 200);
+        this.lights.addLight(0, 0, 200);
 
         for (let i = 100; i < 3200; i+=400) {
-        this.lights.addLight(i, 100, 240).setColor(0xff0000).setIntensity(3.0);
-        this.lights.addLight(i, 200, 240).setColor(0x00ff00).setIntensity(3.0);
-        this.lights.addLight(i, 300, 240).setColor(0xff00ff).setIntensity(3.0);
-        this.lights.addLight(i, 400, 240).setColor(0xffff00).setIntensity(3.0);
-        this.lights.addLight(i, 500, 240).setColor(0x00ffff).setIntensity(3.0);
-        this.lights.addLight(i, 600, 240).setColor(0x0000ff).setIntensity(3.0);
-        this.lights.addLight(i, 700, 240).setColor(0xff69b4).setIntensity(3.0);
-        this.lights.addLight(i, 800, 240).setColor(0xff0000).setIntensity(3.0);
-        this.lights.addLight(i, 900, 240).setColor(0x00ff00).setIntensity(3.0);
-        this.lights.addLight(i, 1000, 240).setColor(0xff00ff).setIntensity(3.0);
-        this.lights.addLight(i, 1100, 240).setColor(0xffff00).setIntensity(3.0);
-        this.lights.addLight(i, 1200, 240).setColor(0x00ffff).setIntensity(3.0);
-        this.lights.addLight(i, 1300, 240).setColor(0x0000ff).setIntensity(3.0);
-        this.lights.addLight(i, 1400, 240).setColor(0xff69b4).setIntensity(3.0);
-        this.lights.addLight(i, 1500, 240).setColor(0xff00ff).setIntensity(3.0);
-        this.lights.addLight(i, 1600, 240).setColor(0xffff00).setIntensity(3.0);
-        this.lights.addLight(i, 1700, 240).setColor(0x00ffff).setIntensity(3.0);
-        this.lights.addLight(i, 1800, 240).setColor(0x0000ff).setIntensity(3.0);
-        this.lights.addLight(i, 1900, 240).setColor(0xff69b4).setIntensity(3.0);
+            this.lights.addLight(i, 100, 240).setColor(0xff0000).setIntensity(3.0)
+            this.lights.addLight(i, 200, 240).setColor(0x00ff00).setIntensity(3.0)
+            this.lights.addLight(i, 300, 240).setColor(0xff00ff).setIntensity(3.0)
+            this.lights.addLight(i, 400, 240).setColor(0xffff00).setIntensity(3.0)
+            this.lights.addLight(i, 500, 240).setColor(0x00ffff).setIntensity(3.0)
+            this.lights.addLight(i, 600, 240).setColor(0x0000ff).setIntensity(3.0)
+            this.lights.addLight(i, 700, 240).setColor(0xff69b4).setIntensity(3.0)
+            this.lights.addLight(i, 800, 240).setColor(0xff0000).setIntensity(3.0)
+            this.lights.addLight(i, 900, 240).setColor(0x00ff00).setIntensity(3.0)
+            this.lights.addLight(i, 1000, 240).setColor(0xff00ff).setIntensity(3.0)
+            this.lights.addLight(i, 1100, 240).setColor(0xffff00).setIntensity(3.0)
+            this.lights.addLight(i, 1200, 240).setColor(0x00ffff).setIntensity(3.0)
+            this.lights.addLight(i, 1300, 240).setColor(0x0000ff).setIntensity(3.0)
+            this.lights.addLight(i, 1400, 240).setColor(0xff69b4).setIntensity(3.0)
+            this.lights.addLight(i, 1500, 240).setColor(0xff00ff).setIntensity(3.0)
+            this.lights.addLight(i, 1600, 240).setColor(0xffff00).setIntensity(3.0)
+            this.lights.addLight(i, 1700, 240).setColor(0x00ffff).setIntensity(3.0)
+            this.lights.addLight(i, 1800, 240).setColor(0x0000ff).setIntensity(3.0)
+            this.lights.addLight(i, 1900, 240).setColor(0xff69b4).setIntensity(3.0)
         }
 
         this.lights.disable()
@@ -176,12 +175,12 @@ let Sewer = new Phaser.Class({
         this.physics.add.collider(car, CollisionLayer)
         this.physics.add.overlap(car, rats, hitRat, null, this)
         
-        this.cameras.main.setBounds(0, 0, 3200, 1920);
-        this.cameras.main.startFollow(car);
+        this.cameras.main.setBounds(0, 0, 3200, 1920)
+        this.cameras.main.startFollow(car)
         
-        car.setCollideWorldBounds(true);
+        car.setCollideWorldBounds(true)
 
-        cursors = this.input.keyboard.createCursorKeys();
+        cursors = this.input.keyboard.createCursorKeys()
 
         this.physics.add.collider(dragons, CollisionLayer)
         this.physics.add.collider(greenDragons, CollisionLayer)
@@ -251,8 +250,8 @@ let Sewer = new Phaser.Class({
         },
         active: function () {
             scoreText = add.text(70, 12, score, { fontFamily: 'Fredoka One', fontSize: '25px', fill: '#ff3333', stroke: '#ffffff', strokeThickness: 8, shadow: {offsetY: 4, offsetX: 2, color: 'white', fill: true} }).setScrollFactor(0)
-        }
-    });
+            }
+        })
 
     let winSound = this.sound.add('slurp', {
         volume: 0.3,
@@ -268,19 +267,19 @@ let Sewer = new Phaser.Class({
             }
         }
 
-        this.events.on('blur', () => {
+        this.game.events.on('blur', () => {
             timer.paused = true
         })
-        this.events.on('focus', () => {
+        this.game.events.on('focus', () => {
             timer.paused = false
         })
     },
 
     update: function () {
-        if (vision){
-		vision.x = car.x
-		vision.y = car.y
-	}
+        if (vision) {
+            vision.x = car.x
+            vision.y = car.y
+        }
         if (cursors.left.isDown && cursors.up.isDown) {
             car.setVelocityX((carVelocity * -1))
             car.setVelocityY((carVelocity * -1))
@@ -324,7 +323,7 @@ let Sewer = new Phaser.Class({
             } else {
                 currLight.y = 0
             }
-    });
+        })
         dragons.children.entries.forEach(dragon => {
             if (dragon.body.velocity.x > 0) {
                 dragon.anims.play('dragonright', true)

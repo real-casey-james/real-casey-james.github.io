@@ -5,7 +5,7 @@ let Village = new Phaser.Class({
 
     initialize: 
 
-function sceneA () { Phaser.Scene.call(this, { key: 'sceneA', active: false })},
+function village () { Phaser.Scene.call(this, { key: 'village', active: false })},
 
 init: function (data) {
     score = data.score
@@ -34,14 +34,12 @@ create: function () {
     this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
         this.sound.play('engine')
         carVelocity = 250
-        carPosX = car.body.position.x,
-        carPosY = car.body.position.y,
-        this.scene.start('cubicle', { score: score, carPosX: car.body.position.x, carPosY: car.body.position.y, carVelocity: carVelocity })
+        this.scene.start('office', { score: score, carPosX: car.body.position.x, carPosY: car.body.position.y, carVelocity: carVelocity })
     })
 
     this.physics.world.setBounds(0, 0, 3200, 1920);
 
-    const map = this.make.tilemap({key: 'drive'});   
+    const map = this.make.tilemap({key: 'drive'}) 
     const villageTiles = map.addTilesetImage('Serene_Village_48x48', 'Serene_Village_48x48')
     
     map.createLayer('Village Background', villageTiles)
@@ -191,52 +189,52 @@ create: function () {
     },
     active: function () {
         scoreText = add.text(70, 12, score, { fontFamily: 'Fredoka One', fontSize: '25px', fill: '#ff3333', stroke: '#ffffff', strokeThickness: 8, shadow: {offsetY: 4, offsetX: 2, color: 'white', fill: true} }).setScrollFactor(0)
-    }
-});
+        }
+    })
 
-particles = this.add.particles('smoke')
-particles.createEmitter({
-    lifespan: 1000,
-    speedY: -100,
-    quantity: 1,
-    scale: { start: 0.1, end: 1},
-    alpha: { start: 0.5, end: 0 },
-    on: false
-})
+    particles = this.add.particles('smoke')
+    particles.createEmitter({
+        lifespan: 1000,
+        speedY: -100,
+        quantity: 1,
+        scale: { start: 0.1, end: 1},
+        alpha: { start: 0.5, end: 0 },
+        on: false
+    })
 
-bloodParticles.createEmitter({
-    lifespan: 30000,
-    speed: 0,
-    quantity: 1,
-    scale: 0.2,
-    on: false
-})
+    bloodParticles.createEmitter({
+        lifespan: 30000,
+        speed: 0,
+        quantity: 1,
+        scale: 0.2,
+        on: false
+    })
 
-function hitSheep (car, sheep) {
+    function hitSheep (car, sheep) {
         sheep.disableBody(true, true)
         bloodParticles.emitParticleAt((car.body.position.x + 50), (car.body.position.y + 50))
         this.sound.play('sheepSound', { volume: 0.6 })
         this.sound.play('crash', { volume: 0.5 })
-        score += 10;
+        score += 10
         if (scoringActive) {
-            scoreText.setText(score);
+            scoreText.setText(score)
         }
         if (sheeps.countActive(true) === 3) {
             sheeps.children.iterate(function (child) {
-                child.enableBody(true, child.x, child.y, true, true);
-            });
+                child.enableBody(true, child.x, child.y, true, true)
+            })
         }
-}
-    this.events.on('blur', () => {
+    }
+    this.game.events.on('blur', () => {
         timer.paused = true
     })
-    this.events.on('focus', () => {
+    this.game.events.on('focus', () => {
         timer.paused = false
     })
 },
 
 update: function () {
-        if (cursors.left.isDown && cursors.up.isDown) {
+    if (cursors.left.isDown && cursors.up.isDown) {
         car.setVelocityX((carVelocity * -1))
         car.setVelocityY((carVelocity * -1))
         particles.emitParticleAt((car.body.position.x + 70), (car.body.position.y + 70))

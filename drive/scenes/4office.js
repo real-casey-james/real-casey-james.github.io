@@ -1,11 +1,11 @@
 let score, timer, cursors, scoreText, carVelocity, carPosX, carPosY, car
 
-let Cubicle = new Phaser.Class({
+let Office = new Phaser.Class({
     Extends: Phaser.Scene,
 
     initialize:
 
-    function cubicleScene () { Phaser.Scene.call(this, { key: 'cubicle', active: false })},
+    function office () { Phaser.Scene.call(this, { key: 'office', active: false })},
 
     init: function (data) {
         score = data.score
@@ -85,12 +85,12 @@ let Cubicle = new Phaser.Class({
         this.physics.add.collider(car, CollisionLayer)
         this.physics.add.overlap(car, stars, hitStar, null, this)
 
-        this.cameras.main.setBounds(0, 0, 3200, 1920);
-        this.cameras.main.startFollow(car);
+        this.cameras.main.setBounds(0, 0, 3200, 1920)
+        this.cameras.main.startFollow(car)
         
-        car.setCollideWorldBounds(true);
+        car.setCollideWorldBounds(true)
 
-        cursors = this.input.keyboard.createCursorKeys();
+        cursors = this.input.keyboard.createCursorKeys()
         this.add.image(0, 0, 'scoreBackground').setScale(0.55, 0.65).setOrigin(0).setScrollFactor(0)
         this.add.image(40, 25, 'scoreCoin').setScale(0.6).setScrollFactor(0)
         let add = this.add
@@ -100,8 +100,8 @@ let Cubicle = new Phaser.Class({
         },
         active: function () {
             scoreText = add.text(70, 12, score, { fontFamily: 'Fredoka One', fontSize: '25px', fill: '#ff3333', stroke: '#ffffff', strokeThickness: 8, shadow: {offsetY: 4, offsetX: 2, color: 'white', fill: true} }).setScrollFactor(0)
-        }
-    });
+            }
+        })
 
         function hitStar (copierA, star) {
             this.sound.play('printer')
@@ -121,10 +121,10 @@ let Cubicle = new Phaser.Class({
                 }
             })
         })
-        this.events.on('blur', () => {
+        this.game.events.on('blur', () => {
             timer.paused = true
         })
-        this.events.on('focus', () => {
+        this.game.events.on('focus', () => {
             timer.paused = false
         })
     },
@@ -166,4 +166,4 @@ let Cubicle = new Phaser.Class({
     }
 })
 
-export default Cubicle
+export default Office

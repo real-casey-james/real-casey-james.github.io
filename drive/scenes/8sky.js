@@ -67,7 +67,7 @@ let Sky = new Phaser.Class({
             tile.alpha = 0
         })
 
-        const pathLayer = map.createLayer('Sky Path', skyTiles)
+        map.createLayer('Sky Path', skyTiles)
         let EggLayer = map.getObjectLayer('Sheep')['objects']
         let SpaceStationLayer = map.getObjectLayer('SpaceStations')['objects']
         let PlaneLayer = map.getObjectLayer('Planes')['objects']
@@ -170,11 +170,11 @@ let Sky = new Phaser.Class({
         active: function () {
             scoreText = add.text(70, 12, score, { fontFamily: 'Fredoka One', fontSize: '25px', fill: '#ff3333', stroke: '#ffffff', strokeThickness: 8, shadow: {offsetY: 4, offsetX: 2, color: 'white', fill: true} }).setScrollFactor(0)
         }
-    });
+        });
     
-    let winSound = this.sound.add('harp', {
-        volume: 0.2,
-    })
+        let winSound = this.sound.add('harp', {
+            volume: 0.2,
+        })
 
         function hitEgg (bird, egg) {
             winSound.play()
@@ -197,10 +197,10 @@ let Sky = new Phaser.Class({
             })
         }
 
-        this.events.on('blur', () => {
+        this.game.events.on('blur', () => {
             timer.paused = true
         })
-        this.events.on('focus', () => {
+        this.game.events.on('focus', () => {
             timer.paused = false
         })
     },

@@ -30,7 +30,7 @@ let Desert = new Phaser.Class({
         callback: () => {
             rainbowParticles.resume()
             carVelocity = 600
-        }
+            }
         })
 
         timer = this.time.addEvent({
@@ -45,7 +45,7 @@ let Desert = new Phaser.Class({
             this.scene.start('sky', { score: score, carPosX: car.body.position.x, carPosY: car.body.position.y, carVelocity: carVelocity })
         })
 
-        let camera = this.cameras.main;
+        this.cameras.main
 
         this.physics.world.setBounds(0, 0, 3200, 1920);
         const map = this.make.tilemap({key: 'drive'}); 
@@ -58,33 +58,28 @@ let Desert = new Phaser.Class({
         const allTiles = [tileset, tileset2]
 
         map.createLayer('Desert Background', desertTiles)
-        const pathLayer = map.createLayer('Desert Footpath', desertTiles)
-
-        const roadLayer = map.createLayer('Desert Road', desertTiles)
-        
-        
+        map.createLayer('Desert Footpath', desertTiles)
+        map.createLayer('Desert Road', desertTiles)        
         map.createLayer('Desert Objects', desertObjects)
         let PyramidLayer = map.getObjectLayer('Desert Pyramids')['objects']
         let rainbowParticles = this.add.particles('rainbow')
         let pyramids = this.physics.add.group()
         PyramidLayer.forEach(object => {
             let obj = pyramids.create(object.x, object.y, 'pyramid') 
-            obj.setOrigin(0,1)  
+            obj.setOrigin(0, 1)  
         })
         map.createLayer('Desert Mask', desertTiles)
         
         car = this.physics.add.sprite(carPosX, carPosY, 'camel').setScale(1.5)
         car.setSize(50, 50, true)
         
-
         let DartLayer = map.getObjectLayer('Sheep')['objects']
-        
         let darts = this.physics.add.group()
         DartLayer.forEach(object => {
             let obj = darts.create(object.x, object.y, 'durry')            
             obj.setSize(50, 50, true)
             obj.setScale(0.6)
-            obj.setOrigin(0,1)
+            obj.setOrigin(0, 1)
         })
 
         this.anims.create({
@@ -179,8 +174,8 @@ let Desert = new Phaser.Class({
         },
         active: function () {
             scoreText = add.text(70, 12, score, { fontFamily: 'Fredoka One', fontSize: '25px', fill: '#ff3333', stroke: '#ffffff', strokeThickness: 8, shadow: {offsetY: 4, offsetX: 2, color: 'white', fill: true} }).setScrollFactor(0)
-        }
-    });
+            }
+        })
 
         function hitDart (camel, cig) {
             this.sound.play('exhale')
@@ -193,10 +188,10 @@ let Desert = new Phaser.Class({
             }
         }
 
-        this.events.on('blur', () => {
+        this.game.events.on('blur', () => {
             timer.paused = true
         })
-        this.events.on('focus', () => {
+        this.game.events.on('focus', () => {
             timer.paused = false
         })
     },

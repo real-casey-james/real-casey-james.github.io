@@ -45,14 +45,13 @@ let End = new Phaser.Class({
         active: function () {
             add.text(160, 100, 'YOU FINISHED!', { fontFamily: 'Fredoka One', fontSize: '62px', fill: '#ff3333', stroke: '#ffffff', strokeThickness: 8, shadow: {offsetY: 6, offsetX: 3, color: 'white', fill: true} })
             add.text(300, 300, `Score: ${score}`, { fontFamily: 'Fredoka One', fontSize: '32px', fill: '#ff3333', stroke: '#ffffff', strokeThickness: 8, shadow: {offsetY: 4, offsetX: 2, color: 'white', fill: true} })
-        }
-    });
+            }
+        })
 
         this.add.image(220, 277, 'button').setScale(0.7).setOrigin(0)
 
         finishItems.add(this.add.image(100, 450, 'pig'))
         finishItems.add(this.add.image(700, 450, 'chick'))
-
         finishItems.children.entries.forEach(object => {
             this.tweens.add({
                 targets: object,
